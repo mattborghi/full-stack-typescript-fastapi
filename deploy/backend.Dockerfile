@@ -13,6 +13,8 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update && \
     apt-get -y install netcat gcc && \
     apt-get clean
+# Upgrade pip
+RUN pip install --upgrade pip
 
 COPY ./backend/requirements.txt /backend/requirements.txt
 COPY ./backend/src/ /backend/src/
